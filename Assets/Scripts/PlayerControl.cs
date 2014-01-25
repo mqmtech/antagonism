@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
+	private bool doubleJumping = false;
 
 	void Awake()
 	{
@@ -35,10 +36,17 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+		if (grounded) {
+			doubleJumping = false;
+		}
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded) {
+		if(Input.GetButtonDown("Jump") && (grounded || !doubleJumping)) {
+			if(!grounded) {
+				doubleJumping = true;
+			}
 			jump = true;
 		}
 	}
