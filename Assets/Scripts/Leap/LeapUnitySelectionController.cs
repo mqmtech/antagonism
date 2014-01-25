@@ -167,6 +167,7 @@ public class LeapUnitySelectionController : MonoBehaviour {
 	
 	public void OnTouched(GameObject finger, Collider other)
 	{	
+		Debug.Log ("OnTouched");
 		//if we're still just focused (not selected yet), change our focus
 		if( !m_Selected && other.gameObject != m_FocusedObject )
 		{

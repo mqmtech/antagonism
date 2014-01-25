@@ -8,6 +8,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Attach one of these to one of the objects in your scene to use Leap input.
@@ -31,8 +32,13 @@ public class LeapUnityBridge : MonoBehaviour
 	public GameObject m_InputParent; //The parent of the hand objects for motion.  Useful 
 	public GameObject m_FingerTemplate; //The template object to use for the fingers. Must have Tags set correctly
 	public GameObject m_PalmTemplate; //The template object to use for the palms.
-	
+
 	private static bool m_Created = false;
+
+	// create drection
+	private List<Vector3> positions = new List<Vector3>();
+	private Vector3 direction = new Vector3(0f,0f,0f);
+	GameObject hands = null;
 	
 	void Awake()
 	{
@@ -83,6 +89,8 @@ public class LeapUnityBridge : MonoBehaviour
 	
 	private void CreateSceneHands()
 	{
+		Debug.Log ("CreateSceneHands");
+
 		GameObject hands = new GameObject("Leap Hands");
 		
 		if( m_InputParent )
@@ -134,6 +142,7 @@ public class LeapUnityBridge : MonoBehaviour
 	private GameObject CreateFinger(GameObject parent, int index)
 	{
 		GameObject finger = Instantiate(m_FingerTemplate) as GameObject;
+
 		finger.transform.parent = parent.transform;
 		finger.name = "Finger " + index;
 		
