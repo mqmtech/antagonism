@@ -28,7 +28,7 @@ public class SimplePlatform : MonoBehaviour {
 		transform.parent = null;
 		Debug.Log("we're hit!");
 
-		BroadcastMessage("onMotionActivate",new Vector2(vel.x, vel.y));
+		BroadcastMessage("onMotionActivate",new Vector2(vel.x*0.05f, vel.y*0.05f));
 
 		LeapFinger finger = other.GetComponent<LeapFinger> ();
 		if(null == finger) {
