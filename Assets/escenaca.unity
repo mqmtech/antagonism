@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870c67141c0daf408cb97810e32e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVel: .5
+  maxVel: .899999976
 --- !u!114 &249532410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 1
   m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069885e-08}
 --- !u!23 &265167458
 Renderer:
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870c67141c0daf408cb97810e32e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVel: .5
+  maxVel: .899999976
 --- !u!23 &664439544
 Renderer:
   m_ObjectHideFlags: 0
@@ -3298,7 +3298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13500002, guid: 0f412ff68d5fa42a3ac7cd1541120372, type: 2}
       propertyPath: m_Radius
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13500002, guid: 0f412ff68d5fa42a3ac7cd1541120372, type: 2}
       propertyPath: m_Enabled
