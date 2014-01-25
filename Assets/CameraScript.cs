@@ -42,7 +42,7 @@ public class CameraScript : MonoBehaviour {
 			nextPlatformY = Mathf.Clamp(nextPlatformY, minY, maxY);
 			rightBorder.y = nextPlatformY;
 
-			int index = Random.Range(0, prefabs.Count-1);
+			int index = Random.Range(0, prefabs.Count);
 
 			GameObject.Instantiate( prefabs[index], rightBorder, this.transform.rotation);
 		}
