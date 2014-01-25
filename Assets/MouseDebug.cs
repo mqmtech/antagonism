@@ -17,7 +17,7 @@ public class MouseDebug : MonoBehaviour {
 	}
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown(0)) {
-			BroadcastMessage("onMotionActivate",new Vector2(mouseMotion.x, mouseMotion.y));
+			BroadcastMessage("onMotionActivate", new Vector2(mouseMotion.x, mouseMotion.y));
 		}
 	}
 

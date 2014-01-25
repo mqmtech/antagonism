@@ -6,11 +6,7 @@ public class Action : MonoBehaviour {
 	Vector2 originalPosition;
 	float returnVelocity = 10;
 
-	public float maxVel = 1.5f;
-
-	float accel = 0f;
-
-	bool pushed = false;
+	public float maxVel = 15.0f;
 
 	void Start() {
 		originalPosition = new Vector2(transform.position.x, transform.position.y);
@@ -35,23 +31,14 @@ public class Action : MonoBehaviour {
 		//Debug.Log (position);
 		float dist = Vector2.Distance(originalPosition, position);
 		if (dist > 0.1) {
-
-			Vector3 difVec = (originalPosition - position);
-			float diffModule = difVec.sqrMagnitude;
-			accel += diffModule;
-
-			rigidbody2D.velocity += (originalPosition - position).normalized * accel * Time.deltaTime;
-
-			//Debug.Log (rigidbody2D.velocity);
-
-			/*
 			Vector2 opositeForce = (originalPosition - position);
-			rigidbody2D.velocity += opositeForce*returnVelocity*0.5f;
-			*/
-
+			rigidbody2D.velocity += opositeForce*returnVelocity*0.02f;
 		}   
 		else {
+			rigidbody2D.velocity = rigidbody2D.velocity * 0.6f;
 		}
+		
+		rigidbody2D.velocity = rigidbody2D.velocity * 0.95f;
 	}
 
 }

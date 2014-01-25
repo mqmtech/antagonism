@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraScript : MonoBehaviour {
 
 	
 	public float speed = 4.5f;
 	public float distanceBetweenPlatforms = 4;
-	public GameObject platformPrefab;
+	public List<GameObject> prefabs;
 	private float nextPlatformX = 0, nextPlatformY = 0;
 	private float minY = 0, maxY = 100;
 	public GameObject firewall;
@@ -40,7 +41,10 @@ public class CameraScript : MonoBehaviour {
 			nextPlatformY = nextPlatformY + Random.Range(-5,5);
 			nextPlatformY = Mathf.Clamp(nextPlatformY, minY, maxY);
 			rightBorder.y = nextPlatformY;
-			GameObject.Instantiate( platformPrefab, rightBorder, this.transform.rotation);
+
+			int index = Random.Range(0, prefabs.Count);
+
+			GameObject.Instantiate( prefabs[index], rightBorder, this.transform.rotation);
 		}
 
 	}
