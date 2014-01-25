@@ -143,6 +143,8 @@ public class LeapUnityBridge : MonoBehaviour
 	{
 		GameObject finger = Instantiate(m_FingerTemplate) as GameObject;
 
+		finger.transform.parent = this.transform;
+
 		finger.transform.parent = parent.transform;
 		finger.name = "Finger " + index;
 		
