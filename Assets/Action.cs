@@ -6,7 +6,9 @@ public class Action : MonoBehaviour {
 	Vector2 originalPosition;
 	float returnVelocity = 100;
 
-	public float maxVel = 0.5f;
+	public float maxVel = 1.5f;
+
+	float accel = 0f;
 
 	void Start() {
 		originalPosition = new Vector2(transform.position.x, transform.position.y);
@@ -31,7 +33,11 @@ public class Action : MonoBehaviour {
 		//Debug.Log (position);
 		float dist = Vector2.Distance(originalPosition, position);
 		if (dist > 0.1) {
-			rigidbody2D.velocity += (originalPosition - position).normalized * returnVelocity * Time.deltaTime;
+			Vector3 difVec = (originalPosition - position);
+			float diffModule = difVec.sqrMagnitude;
+			accel += diffModule;
+
+			rigidbody2D.velocity += (originalPosition - position) * accel * Time.deltaTime;
 
 			Debug.Log (rigidbody2D.velocity);
 		}   
