@@ -323,7 +323,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 805070397}
   m_GameObject: {fileID: 249532401}
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870c67141c0daf408cb97810e32e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVel: .5
 --- !u!114 &249532410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a81f4dd6e07e442be5f3f28f7ea3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 20, y: 20, z: 0}
+  offset: {x: 12, y: 20, z: 0}
 --- !u!4 &294767265
 Transform:
   m_ObjectHideFlags: 0
@@ -927,6 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870c67141c0daf408cb97810e32e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVel: .5
 --- !u!23 &664439544
 Renderer:
   m_ObjectHideFlags: 0
@@ -2072,7 +2074,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1249554533}
   m_GameObject: {fileID: 664439541}
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -2194,7 +2196,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0337978321ceb7f4e8a4bca96977c39b, type: 2}
       propertyPath: offset.x
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0337978321ceb7f4e8a4bca96977c39b, type: 2}
@@ -2992,9 +2994,6 @@ GameObject:
   - 50: {fileID: 1806937540}
   - 61: {fileID: 1806937539}
   - 65: {fileID: 1806937541}
-  - 114: {fileID: 1806937538}
-  - 114: {fileID: 1806937535}
-  - 114: {fileID: 1806937542}
   m_Layer: 12
   m_Name: StartPlatform
   m_TagString: Untagged
@@ -3024,18 +3023,6 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
---- !u!114 &1806937535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: ce21eef1f08013743b79819f04929c08,
-    type: 2}
-  m_PrefabInternal: {fileID: 1881619597}
-  m_GameObject: {fileID: 1806937533}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c30c9feed463a4fae14a597ef56616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1806937536
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3055,18 +3042,6 @@ Transform:
   m_LocalScale: {x: 27.5455647, y: .676882923, z: 1.17718673}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &1806937538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: ce21eef1f08013743b79819f04929c08,
-    type: 2}
-  m_PrefabInternal: {fileID: 1881619597}
-  m_GameObject: {fileID: 1806937533}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6870c67141c0daf408cb97810e32e787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1806937539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3086,7 +3061,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1881619597}
   m_GameObject: {fileID: 1806937533}
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -3108,18 +3083,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1806937542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: ce21eef1f08013743b79819f04929c08,
-    type: 2}
-  m_PrefabInternal: {fileID: 1881619597}
-  m_GameObject: {fileID: 1806937533}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a1942c8ddd1b04bb74a3bfa9b2d827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1808713974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,6 +3203,9 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 11400002, guid: ce21eef1f08013743b79819f04929c08, type: 2}
+    - {fileID: 11400000, guid: ce21eef1f08013743b79819f04929c08, type: 2}
+    - {fileID: 11400004, guid: ce21eef1f08013743b79819f04929c08, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ce21eef1f08013743b79819f04929c08, type: 2}
   m_RootGameObject: {fileID: 1806937533}
   m_IsPrefabParent: 0
