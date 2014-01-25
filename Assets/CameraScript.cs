@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraScript : MonoBehaviour {
 
 	
-	public float speed = 3.5f;
+	public float speed = 4.5f;
 	public float distanceBetweenPlatforms = 4;
 	public GameObject platformPrefab;
 	private float nextPlatformX = 0, nextPlatformY = 0;

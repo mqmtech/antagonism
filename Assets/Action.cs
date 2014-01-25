@@ -13,7 +13,7 @@ public class Action : MonoBehaviour {
 
 	// Use this for initialization
 	void onMotionActivate (Vector2 velocity) {
-		rigidbody2D.velocity += velocity * 100;
+		rigidbody2D.velocity += velocity * 10;
 		Debug.Log (velocity);
 	}
 	
@@ -28,7 +28,7 @@ public class Action : MonoBehaviour {
 			Debug.Log (rigidbody2D.velocity);
 		}   
 		else {
-			rigidbody2D.velocity = Vector3.zero;
+			//rigidbody2D.velocity = Vector3.zero;
 		}
 	}
 
