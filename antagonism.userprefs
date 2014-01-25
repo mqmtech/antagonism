@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CameraScript.cs">
+    <Files>
+      <File FileName="Assets\CameraScript.cs" Line="8" Column="43" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="43" Column="3" />
+      <File FileName="Assets\Antagonism\Scripts\RestartOnOutOfScreen.cs" Line="9" Column="74" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
