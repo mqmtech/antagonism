@@ -90,7 +90,7 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
-    altNegativeButton: 
+    altNegativeButton: up
     altPositiveButton: 
     gravity: 1000
     dead: .00100000005
@@ -147,38 +147,6 @@ InputManager:
     invert: 0
     type: 1
     axis: 2
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Window Shake X
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: .100000001
-    snap: 0
-    invert: 0
-    type: 3
-    axis: 0
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Window Shake Y
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: .100000001
-    snap: 0
-    invert: 0
-    type: 3
-    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: Horizontal
