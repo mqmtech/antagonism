@@ -3,11 +3,12 @@ using System.Collections;
 
 public class SimplePlatform : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	Action action;
+	void Awake()
+	{
+		action = GetComponent<Action> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	
@@ -26,6 +27,8 @@ public class SimplePlatform : MonoBehaviour {
 		Vector3 vel = other.rigidbody.velocity;
 		transform.parent = null;
 		Debug.Log("we're hit!");
+
+		BroadcastMessage("onMotionActivate",new Vector2(vel.x, vel.y));
 
 		LeapFinger finger = other.GetComponent<LeapFinger> ();
 		if(null == finger) {

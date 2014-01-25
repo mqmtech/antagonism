@@ -6,12 +6,16 @@ public class LeapFingerColliderController : MonoBehaviour {
 	Transform target = null;
 
 	Vector3 offset;
+	public float zPosistion = 0f;
+
+	LeapControllerOffset controllerOffset = null;
 
 	void Awake()
 	{
 		target = GameObject.Find ("Main Camera").transform;
 
-		offset = GameObject.Find ("LeapControllerOffset").transform.position;
+		controllerOffset = GameObject.Find ("LeapControllerOffset").GetComponent<LeapControllerOffset> ();
+		offset = controllerOffset.offset;
 	}
 
 	// Use this for initialization
@@ -20,12 +24,17 @@ public class LeapFingerColliderController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//repos ();
+		repos ();
 	}
 
 	void FixedUpdate()
 	{
 		repos ();
+	}
+
+	void OnColliderEnter(Collider other)
+	{
+		Debug.Log ("the other is: " + other.name);
 	}
 
 	void repos()
@@ -35,9 +44,10 @@ public class LeapFingerColliderController : MonoBehaviour {
 		if (parentTrans == null) {
 			return;
 		}
-		
+
+		offset = controllerOffset.offset;
 		transform.position = new Vector3 (parentTrans.position.x + offset.x,
 		                                  parentTrans.position.y + offset.y,
-		                                  0);
+		                                  0f);
 	}
 }
