@@ -25,6 +25,13 @@ public class PlayerControl : MonoBehaviour
 
 	private bool doubleJumping = false;
 
+	public int maxJumps = 0;
+
+	public void setDoubleJumps(int njumps)
+	{
+		maxJumps = njumps;
+	}
+
 	void Awake()
 	{
 		// Setting up references.
@@ -43,14 +50,17 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && (grounded || !doubleJumping)) {
-			if(!grounded) {
-				doubleJumping = true;
+		if(Input.GetButtonDown("Jump")){
+			if(grounded) {
+				jump = true;
+			} else {
+				if(maxJumps > 0) {
+					jump = true;
+					maxJumps--;
+				}
 			}
-			jump = true;
 		}
 	}
-
 
 	void FixedUpdate ()
 	{
