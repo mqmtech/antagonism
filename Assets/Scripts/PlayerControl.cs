@@ -14,6 +14,9 @@ public class PlayerEvents
 
 public class PlayerControl : MonoBehaviour
 {
+
+	public Texture djumpTex;
+
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -203,5 +206,16 @@ public class PlayerControl : MonoBehaviour
 		else
 			// Otherwise return this index.
 			return i;
+	}
+
+
+	
+	void OnGUI() {
+		if (true || maxJumps > 0) {
+			GUI.skin.label.fontSize = 24;
+			GUI.DrawTexture(new Rect (10, 50, 40, 40), djumpTex); 
+			GUI.Label(new Rect (60, 55, 200, 50), "x" + maxJumps);
+		}
+		
 	}
 }

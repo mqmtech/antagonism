@@ -28,8 +28,8 @@ public class EventManager : MonoBehaviour {
 
 		if (null != listeners) {
 			foreach (GameObject go in listeners) {
-				Debug.Log ("Broadcasting Event to go: " + go.name + ", eventName is: " + eventName);
-				go.BroadcastMessage(eventName, parameter);
+				//Debug.Log ("Broadcasting Event to go: " + go.name + ", eventName is: " + eventName);
+				go.BroadcastMessage(eventName, parameter, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}

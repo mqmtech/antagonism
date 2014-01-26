@@ -3,9 +3,8 @@ using System.Collections;
 
 public class Action : MonoBehaviour {
 
-	Vector2 originalPosition;
-	float returnVelocity = 10;
-
+	private Vector2 originalPosition;
+	public float returnVelocity = 10;
 	public float maxVel = 15.0f;
 
 	void Start() {
@@ -21,7 +20,7 @@ public class Action : MonoBehaviour {
 		rigidbody2D.velocity.Normalize ();
 		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x * vel, rigidbody2D.velocity.y *vel);
 
-		Debug.Log (velocity);
+		//Debug.Log (velocity);
 	}
 	
 	void Update () {
