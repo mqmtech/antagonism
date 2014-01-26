@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CameraScript : MonoBehaviour {
 
 	
-	public float scrollSpeed = 5f;
+	public float scrollSpeed = 6.2f;
 	public float distanceBetweenPlatforms = 4;
 	public float distanceBetweenItems = 10;
 	public List<GameObject> platformPrefabs;
@@ -33,7 +33,7 @@ public class CameraScript : MonoBehaviour {
 		//Scroll camera
 		Vector3 position = this.transform.position;
 		position.x += scrollSpeed*Time.deltaTime;
-		scrollSpeed += 0.01f*Time.deltaTime;
+		scrollSpeed += 0.05f*Time.deltaTime;
 		this.transform.position = position;
 
 		//Create new platforms
@@ -50,7 +50,7 @@ public class CameraScript : MonoBehaviour {
 		}
 
 
-		if (position.x > nextItemX && Random.value < 0.004) {
+		if (position.x > nextItemX && Random.value < 0.0045) {
 			Vector3 rightBorder = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,0.5f,-position.z));
 			rightBorder.x += distanceBetweenItems;
 			rightBorder.y = nextPlatformY + Random.Range(2,10);
