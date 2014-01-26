@@ -1,15 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
-    <Files>
-      <File FileName="Assets\MainNPC.cs" Line="106" Column="1" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" Line="31" Column="16" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="119" Column="37" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

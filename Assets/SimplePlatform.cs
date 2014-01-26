@@ -24,6 +24,10 @@ public class SimplePlatform : MonoBehaviour {
 			other = other.parent.transform;
 		}
 
+		if(null == other.rigidbody) {
+			return;
+		}
+
 		Vector3 vel = other.rigidbody.velocity;
 		transform.parent = null;
 		//Debug.Log(gameObject.name + " we're hit!");
