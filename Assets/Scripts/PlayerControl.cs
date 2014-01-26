@@ -158,6 +158,7 @@ public class PlayerControl : MonoBehaviour
 
 			// Add a vertical force to the player.
 			if(doubleJumping) {
+				rigidbody2D.velocity = new Vector2(0f,0f);
 				rigidbody2D.AddForce(new Vector2(0f, jumpForce/2f));
 			} else {
 				rigidbody2D.AddForce(new Vector2(0f, jumpForce));
