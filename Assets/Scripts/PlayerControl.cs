@@ -1,6 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PlayerState
+{
+	PLAYER_STATE_DEFAULT,
+	PLAYER_STATE_ENEMY
+}
+
+public class PlayerEvents
+{
+	public static string onPlayerStateChanged = "onPlayerStateChanged";
+}
+
 public class PlayerControl : MonoBehaviour
 {
 	[HideInInspector]
@@ -26,6 +37,10 @@ public class PlayerControl : MonoBehaviour
 	private bool doubleJumping = false;
 
 	public int maxJumps = 0;
+	PostProcessController postProcessController;
+	PlayerState playerState;
+
+	EventManager eventManager;
 
 	public void setDoubleJumps(int njumps)
 	{
@@ -37,6 +52,10 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
+
+
+		postProcessController = GameObject.Find ("Main Camera").GetComponent<PostProcessController>();
+		eventManager = GameObject.Find ("EventManager").GetComponent<EventManager>();
 	}
 
 
@@ -59,6 +78,31 @@ public class PlayerControl : MonoBehaviour
 					maxJumps--;
 				}
 			}
+		}
+
+		// Change player state
+		if (Input.GetKeyDown (KeyCode.C)) 
+		{
+			changePlayerState();
+
+			if (playerState == PlayerState.PLAYER_STATE_DEFAULT)
+			{
+				eventManager.BroadcastEvent(PlayerEvents.onPlayerStateChanged, PlayerState.PLAYER_STATE_DEFAULT);
+				//postProcessController.enableDefaultState();
+			} else {
+				eventManager.BroadcastEvent(PlayerEvents.onPlayerStateChanged, PlayerState.PLAYER_STATE_ENEMY);
+				//postProcessController.enableEnemyState();
+			}
+		}
+	}
+
+	void changePlayerState()
+	{
+		if (playerState == PlayerState.PLAYER_STATE_DEFAULT)
+		{
+			playerState = PlayerState.PLAYER_STATE_ENEMY;
+		} else {
+			playerState = PlayerState.PLAYER_STATE_DEFAULT;
 		}
 	}
 

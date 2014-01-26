@@ -13,7 +13,13 @@ public class MotionBlur : ImageEffectBase
 {
 	public float blurAmount = 0.8f;
 	public bool extraBlur = false;
-	
+
+	float intensity = 0;
+	bool activated = false;
+
+	public float transitionVelocity = 1f;
+	public float deactivateTransitionVelocity = 2f;
+
 	private RenderTexture accumTexture;
 	
 	override protected void Start()
@@ -30,6 +36,34 @@ public class MotionBlur : ImageEffectBase
 	{
 		base.OnDisable();
 		DestroyImmediate(accumTexture);
+	}
+
+	void Update()
+	{
+		if (activated) {
+			intensity = Mathf.Lerp(intensity, 1f, Time.deltaTime * transitionVelocity);
+		} else {
+			intensity = Mathf.Lerp(intensity, 0f, Time.deltaTime * deactivateTransitionVelocity);
+			
+			if(0 == intensity) {
+				enabled = false;
+			}
+		}
+	}
+
+	public void activate()
+	{
+		enabled = true;
+		intensity = 0f;
+		
+		activated = true;
+	}
+	
+	public void deactivate()
+	{
+		intensity = 0f;
+		
+		activated = false;
 	}
 
 	// Called by camera to apply image effect

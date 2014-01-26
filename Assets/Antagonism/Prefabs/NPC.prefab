@@ -200,6 +200,9 @@ MonoBehaviour:
   mode: 1
   maxDoubleJumps: 4
   force: 3
+  radius: 3
+  particlesOnEnemy: {fileID: 400000, guid: bf372d186aba73247a4a3f94e0ffd7a5, type: 2}
+  particlesOnFriend: {fileID: 400000, guid: bf372d186aba73247a4a3f94e0ffd7a5, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

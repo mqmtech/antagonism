@@ -33,12 +33,20 @@ public class MainNPC : MonoBehaviour
 
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 
+		int r = Random.Range (0, 2);
+
+		if (r < 1) {
+			mode = NPCMode.MODE_ENEMY;
+		} else {
+			mode = NPCMode.MODE_FRIEND;
+		}
+
 		setActiveChilds ();
 	}
 
 	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+	{
 		Vector2 dir = transform.position - player.position;
 
 		float dist = dir.magnitude;
@@ -50,12 +58,21 @@ public class MainNPC : MonoBehaviour
 		setActiveChilds ();
 	}
 
+	void randomMove()
+	{
+		float rX = Random.Range (-0.2f, 0.2f);
+		float rY = Random.Range (-0.2f, 0.2f);
+
+		rigidbody2D.velocity += new Vector2 (rX, rY);
+	}
+
 	public void switchMode()
 	{
 		if (mode == NPCMode.MODE_FRIEND)
 		{
 			mode = NPCMode.MODE_ENEMY;
-		} else {
+		} 
+		else {
 			mode = NPCMode.MODE_FRIEND;
 		}
 
@@ -64,11 +81,13 @@ public class MainNPC : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		applyOnEnter (other.transform);
+		applyOnEnter (other.gameObject.transform);
 	}
 
 	void applyOnEnter(Transform other)
 	{
+		return;
+
 		if(isActivated) {
 			return;
 		}
@@ -76,7 +95,6 @@ public class MainNPC : MonoBehaviour
 
 		if (mode == NPCMode.MODE_FRIEND)
 		{
-			Debug.Log("Player gets double jumps!!");
 			other.GetComponent<PlayerControl>().setDoubleJumps(maxDoubleJumps);
 
 			Instantiate(particlesOnEnemy, transform.position, Quaternion.identity);
@@ -84,8 +102,6 @@ public class MainNPC : MonoBehaviour
 			// Destroy
 			Destroy(gameObject);
 		} else {
-			Debug.Log("Players has died!!");
-
 			Application.LoadLevel(Application.loadedLevel);
 			Instantiate(particlesOnFriend, transform.position, Quaternion.identity);
 		}

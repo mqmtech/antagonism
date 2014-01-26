@@ -38,10 +38,13 @@ public class LeapUnityBridge : MonoBehaviour
 	// create drection
 	private List<Vector3> positions = new List<Vector3>();
 	private Vector3 direction = new Vector3(0f,0f,0f);
+
 	GameObject hands = null;
 	
 	void Awake()
 	{
+		DontDestroyOnLoad (transform.gameObject);
+
 		if( m_Created )
 		{
 			throw new UnityException("A LeapUnityBridge has already been created!");
@@ -65,7 +68,7 @@ public class LeapUnityBridge : MonoBehaviour
 	
 	void OnDestroy()
 	{
-		m_Created = false;	
+		Debug.Log ("onDestroy");
 	}
 	
 	void FixedUpdate()
@@ -89,9 +92,8 @@ public class LeapUnityBridge : MonoBehaviour
 	
 	private void CreateSceneHands()
 	{
-		Debug.Log ("CreateSceneHands");
-
-		GameObject hands = new GameObject("Leap Hands");
+		//GameObject hands = new GameObject("Leap Hands");
+		hands = new GameObject("Leap Hands");
 		
 		if( m_InputParent )
 		{
