@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .172615975, y: 1.47736037, z: .849482894}
+  m_LocalScale: {x: .146677464, y: 1.47736037, z: .849482894}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400004
@@ -134,9 +134,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 0, y: .456088603, z: 0, w: .889934361}
-  m_LocalPosition: {x: 13.4042578, y: 31.0467091, z: 2.32443714}
-  m_LocalScale: {x: 5.79320669, y: .676882923, z: 1.17718673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.6954994, y: 35.156353, z: -22.5794258}
+  m_LocalScale: {x: 3, y: .300000012, z: .600000024}
   m_Children:
   - {fileID: 400004}
   - {fileID: 400006}
@@ -200,7 +200,7 @@ MonoBehaviour:
   mode: 1
   maxDoubleJumps: 4
   force: 3
-  radius: 3
+  radius: 2
   particlesOnEnemy: {fileID: 400002, guid: 4e15e5c170ffd2f4993341437cb8ca5a, type: 2}
   particlesOnFriend: {fileID: 400002, guid: 4e15e5c170ffd2f4993341437cb8ca5a, type: 2}
 --- !u!212 &21200000
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: bc16422a503ec43cab4ad9ddab02ff7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d234b52507a8f6b45871198379ad6d83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
