@@ -75,7 +75,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.6954994, y: 35.156353, z: -22.5794258}
+  m_LocalPosition: {x: 57.8284073, y: 35.9713936, z: -1.26809025}
   m_LocalScale: {x: 3, y: .300000012, z: .600000024}
   m_Children:
   - {fileID: 400004}
@@ -200,7 +200,7 @@ MonoBehaviour:
   mode: 1
   maxDoubleJumps: 4
   force: 3
-  radius: 2
+  radius: 1.5
   particlesOnEnemy: {fileID: 400002, guid: 4e15e5c170ffd2f4993341437cb8ca5a, type: 2}
   particlesOnFriend: {fileID: 400002, guid: 4e15e5c170ffd2f4993341437cb8ca5a, type: 2}
 --- !u!212 &21200000
