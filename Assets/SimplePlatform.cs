@@ -26,7 +26,7 @@ public class SimplePlatform : MonoBehaviour {
 
 		Vector3 vel = other.rigidbody.velocity;
 		transform.parent = null;
-		Debug.Log(gameObject.name + " we're hit!");
+		//Debug.Log(gameObject.name + " we're hit!");
 
 		BroadcastMessage("onMotionActivate", new Vector2(vel.x*0.05f, vel.y*0.05f), SendMessageOptions.DontRequireReceiver);
 
