@@ -69,11 +69,17 @@ public class PlayerControl : MonoBehaviour
 		bool wasGrounded = grounded;
 
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+		RaycastHit2D hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+		grounded = hit;
+
+		//Emit particles
+
 
 		if (grounded && !wasGrounded) {
 			//Instantiate(groundedParticles, transform.position, transform.rotation);
-			groundedParticles.particleSystem.Play();
+			//groundedParticles.particleSystem.Play();
+			ParticleSystem ps = hit.transform.GetComponentInChildren<ParticleSystem> ();
+			ps.Emit (40);
 		}
 		wasGrounded = grounded;
 

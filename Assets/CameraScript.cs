@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour {
 		nextPlatformY = leftBorder.y - 5;
 
 		//Read screen geometry (TODO: Update on resize) 
-		maxY = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,1,1)).y - 5;
+		maxY = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,1,1)).y - 10;
 		minY = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,0,1)).y + 5;
 
 	}
@@ -53,7 +53,7 @@ public class CameraScript : MonoBehaviour {
 		if (position.x > nextItemX && Random.value < 0.0045) {
 			Vector3 rightBorder = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,0.5f,-position.z));
 			rightBorder.x += distanceBetweenItems;
-			rightBorder.y = nextPlatformY + Random.Range(2,10);
+			rightBorder.y = nextPlatformY + Random.Range(-5,5);
 			rightBorder.y = Mathf.Clamp(rightBorder.y, minY, maxY);
 			int index = Random.Range(0, itemPrefabs.Count);
 			GameObject.Instantiate( itemPrefabs[index], rightBorder, this.transform.rotation);
