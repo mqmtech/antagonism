@@ -26,23 +26,14 @@ public class SimplePlatform : MonoBehaviour {
 
 		Vector3 vel = other.rigidbody.velocity;
 		transform.parent = null;
-		Debug.Log("we're hit!");
+		Debug.Log(gameObject.name + " we're hit!");
 
-		BroadcastMessage("onMotionActivate",new Vector2(vel.x*0.05f, vel.y*0.05f));
+		BroadcastMessage("onMotionActivate", new Vector2(vel.x*0.05f, vel.y*0.05f), SendMessageOptions.DontRequireReceiver);
 
-		LeapFinger finger = other.GetComponent<LeapFinger> ();
-		if(null == finger) {
-			Debug.Log("finger is null");
+		if (null != rigidbody) {
+			rigidbody.isKinematic = false;
+			collider.isTrigger = false;
+			rigidbody.velocity = vel * 0.001f;
 		}
-
-		if (null == rigidbody) {
-			return;
-		}
-
-		Vector3 middleVel = finger.getMiddleVelocity ();
-
-		rigidbody.isKinematic = false;
-		collider.isTrigger = false;
-		rigidbody.velocity = vel * 0.001f;
 	}
 }

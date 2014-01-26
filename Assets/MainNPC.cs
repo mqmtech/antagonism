@@ -54,6 +54,8 @@ public class MainNPC : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		//Debug.Log ("NPC position: " + transform.position);
+
 		Vector2 dir = transform.position - player.position;
 
 		float dist = dir.magnitude;
@@ -88,7 +90,6 @@ public class MainNPC : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		applyOnEnter (other.gameObject.transform);
 	}
 
 	void applyOnEnter(Transform other)
