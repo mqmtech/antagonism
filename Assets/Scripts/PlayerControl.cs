@@ -43,6 +43,8 @@ public class PlayerControl : MonoBehaviour
 	PostProcessController postProcessController;
 	PlayerState playerState;
 
+	Transform groundedParticles;
+
 	EventManager eventManager;
 
 	public void setDoubleJumps(int njumps)
@@ -56,16 +58,24 @@ public class PlayerControl : MonoBehaviour
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
 
-
 		postProcessController = GameObject.Find ("Main Camera").GetComponent<PostProcessController>();
 		eventManager = GameObject.Find ("EventManager").GetComponent<EventManager>();
-	}
 
+		groundedParticles = GetComponent<ParticleSystem> ().transform;
+	}
 
 	void Update()
 	{
+		bool wasGrounded = grounded;
+
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+		if (grounded && !wasGrounded) {
+			//Instantiate(groundedParticles, transform.position, transform.rotation);
+			groundedParticles.particleSystem.Play();
+		}
+		wasGrounded = grounded;
 
 		if (grounded) {
 			doubleJumping = false;
