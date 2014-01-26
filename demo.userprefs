@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Leap\LeapUnityBridge.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader">
     <Files>
-      <File FileName="Assets\Scripts\Leap\LeapUnityBridge.cs" Line="154" Column="17" />
-      <File FileName="Assets\Scripts\Leap\LeapUnityHandController.cs" Line="79" Column="23" />
+      <File FileName="Assets\MainNPC.cs" Line="106" Column="1" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" Line="31" Column="45" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" Line="27" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
