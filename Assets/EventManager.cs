@@ -20,6 +20,20 @@ public class EventManager : MonoBehaviour {
 		listeners.Add (go);
 	}
 
+	public void removeListener(string eventName, GameObject go)
+	{
+		List<GameObject> listeners = null;
+		
+		if (!gameObjectMap.ContainsKey (eventName)) {
+			listeners = new List<GameObject> ();
+			gameObjectMap.Add(eventName, listeners);
+		} else {
+			gameObjectMap.TryGetValue(eventName, out listeners);
+		}
+		
+		listeners.Remove (go);
+	}
+
 
 	public void BroadcastEvent(string eventName, object parameter)
 	{

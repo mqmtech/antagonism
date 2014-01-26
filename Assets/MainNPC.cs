@@ -123,4 +123,17 @@ public class MainNPC : MonoBehaviour
 			enemyPart.SetActive (true);
 		}
 	}
+
+	void OnDestroy()
+	{
+		GameObject go = GameObject.Find ("EventManager");
+		if (null == go) {
+			return;
+		}
+
+		EventManager eventManager = GameObject.Find ("EventManager").GetComponent<EventManager> ();
+		if (null!=eventManager) {
+			eventManager.removeListener(PlayerEvents.onPlayerStateChanged, this.gameObject);
+		}
+	}
 }
