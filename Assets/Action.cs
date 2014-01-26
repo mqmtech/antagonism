@@ -5,7 +5,7 @@ public class Action : MonoBehaviour {
 
 	private Vector2 originalPosition;
 	public float returnVelocity = 10;
-	public float maxVel = 15.0f;
+	public float maxVel = 12.0f;
 
 	void Start() {
 		originalPosition = new Vector2(transform.position.x, transform.position.y);
@@ -14,7 +14,7 @@ public class Action : MonoBehaviour {
 
 	// Use this for initialization
 	void onMotionActivate (Vector2 velocity) {
-		rigidbody2D.velocity += velocity;
+		rigidbody2D.velocity += velocity*1.6f;
 
 		float vel = Mathf.Clamp(rigidbody2D.velocity.magnitude, -maxVel, maxVel);
 		rigidbody2D.velocity.Normalize ();

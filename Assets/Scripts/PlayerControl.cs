@@ -92,6 +92,13 @@ public class PlayerControl : MonoBehaviour
 				}
 			}
 		}
+		
+		// Change player state
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			
+			Application.LoadLevel(Application.loadedLevel);
+
+		}
 
 		// Change player state
 		if (Input.GetButtonDown ("Jump")) 
