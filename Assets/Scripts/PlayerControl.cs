@@ -61,7 +61,6 @@ public class PlayerControl : MonoBehaviour
 		postProcessController = GameObject.Find ("Main Camera").GetComponent<PostProcessController>();
 		eventManager = GameObject.Find ("EventManager").GetComponent<EventManager>();
 
-		groundedParticles = GetComponent<ParticleSystem> ().transform;
 	}
 
 	void Update()
@@ -88,7 +87,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Fire1")){
+		if(Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.UpArrow) ||Input.GetKeyDown(KeyCode.W) ){
 			if(grounded) {
 				jump = true;
 			} else {
@@ -99,10 +98,10 @@ public class PlayerControl : MonoBehaviour
 			}
 		}
 		
-		// Change player state
+		// Go back to title
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			
-			Application.LoadLevel(Application.loadedLevel);
+			Application.LoadLevel(Application.loadedLevel-1);
 
 		}
 
