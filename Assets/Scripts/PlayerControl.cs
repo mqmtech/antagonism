@@ -72,7 +72,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump")){
+		if(Input.GetButtonDown("Fire1")){
 			if(grounded) {
 				jump = true;
 			} else {
@@ -84,7 +84,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		// Change player state
-		if (Input.GetKeyDown (KeyCode.C)) 
+		if (Input.GetButtonDown ("Jump")) 
 		{
 			changePlayerState();
 
