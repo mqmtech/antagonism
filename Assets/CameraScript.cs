@@ -62,6 +62,12 @@ public class CameraScript : MonoBehaviour {
 		}
 	}
 
+
+	void OnGUI() {
+		GUI.skin.label.fontSize  = 24;
+		GUI.Label (new Rect (10, 10, 200, 50), "Distance: " + Mathf.Floor(this.transform.position.x));
+
+	}
 }
 
 

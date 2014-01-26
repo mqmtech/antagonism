@@ -64,7 +64,6 @@ public class LeapUnityBridge : MonoBehaviour
 	
 	void OnDestroy()
 	{
-		Debug.Log ("onDestroy");
 		LeapInput.Destroy ();
 		m_Created = false;
 	}
