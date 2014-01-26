@@ -41,7 +41,14 @@ public class MainNPC : MonoBehaviour
 			mode = NPCMode.MODE_FRIEND;
 		}
 
+		GameObject.Find ("EventManager").GetComponent<EventManager>().addListener(PlayerEvents.onPlayerStateChanged, gameObject);
+
 		setActiveChilds ();
+	}
+
+	void onPlayerStateChanged()
+	{
+		switchMode ();
 	}
 
 	// Update is called once per frame
