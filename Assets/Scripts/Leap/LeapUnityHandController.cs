@@ -74,12 +74,12 @@ public class LeapUnityHandController : MonoBehaviour
 			m_handIDs[i] = -1;	
 		}
 		
-		LeapInput.HandFound += new LeapInput.HandFoundHandler(OnHandFound);
-		LeapInput.HandLost += new LeapInput.ObjectLostHandler(OnHandLost);
-		LeapInput.HandUpdated += new LeapInput.HandUpdatedHandler(OnHandUpdated);
-		LeapInput.PointableFound += new LeapInput.PointableFoundHandler(OnPointableFound);
-		LeapInput.PointableLost += new LeapInput.ObjectLostHandler(OnPointableLost);
-		LeapInput.PointableUpdated += new LeapInput.PointableUpdatedHandler(OnPointableUpdated);
+		LeapInput.GetLeapInput().HandFound += new LeapInput.HandFoundHandler(OnHandFound);
+		LeapInput.GetLeapInput().HandLost += new LeapInput.ObjectLostHandler(OnHandLost);
+		LeapInput.GetLeapInput().HandUpdated += new LeapInput.HandUpdatedHandler(OnHandUpdated);
+		LeapInput.GetLeapInput().PointableFound += new LeapInput.PointableFoundHandler(OnPointableFound);
+		LeapInput.GetLeapInput().PointableLost += new LeapInput.ObjectLostHandler(OnPointableLost);
+		LeapInput.GetLeapInput().PointableUpdated += new LeapInput.PointableUpdatedHandler(OnPointableUpdated);
 		
 		//do a pass to hide the objects.
 		foreach( GameObject palm in m_palms )

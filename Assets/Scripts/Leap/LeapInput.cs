@@ -20,11 +20,11 @@ using Leap;
 /// To use it, you must call Update from your game's main loop.  It is not fully thread safe
 /// so take care when using it in a multithreaded environment.
 /// </summary>
-public static class LeapInput 
+public class LeapInput 
 {	
-	public static bool EnableTranslation = true;
-	public static bool EnableRotation = true;
-	public static bool EnableScaling = false;
+	public bool EnableTranslation = true;
+	public bool EnableRotation = true;
+	public bool EnableScaling = false;
 	/// <summary>
 	/// Delegates for the events to be dispatched.  
 	/// </summary>
@@ -39,20 +39,20 @@ public static class LeapInput
 	/// Hand Found, Pointable Found, Hand Updated, Pointable Updated,
 	/// Hand Lost, Hand Found.
 	/// </summary>
-	public static event PointableFoundHandler PointableFound;
-	public static event PointableUpdatedHandler PointableUpdated;
-	public static event ObjectLostHandler PointableLost;
+	public event PointableFoundHandler PointableFound;
+	public event PointableUpdatedHandler PointableUpdated;
+	public event ObjectLostHandler PointableLost;
 	
-	public static event HandFoundHandler HandFound;
-	public static event HandUpdatedHandler HandUpdated;
-	public static event ObjectLostHandler HandLost;
+	public event HandFoundHandler HandFound;
+	public event HandUpdatedHandler HandUpdated;
+	public event ObjectLostHandler HandLost;
 	
-	public static Leap.Frame Frame
+	public Leap.Frame Frame
 	{
 		get { return m_Frame; }
 	}
 	
-	public static void Update() 
+	public void Update() 
 	{	
 		if( m_controller != null )
 		{
@@ -76,10 +76,10 @@ public static class LeapInput
 	};
 	
 	//Private variables
-	static Leap.Controller 		m_controller	= new Leap.Controller();
-	static Leap.Frame			m_Frame			= null;
+	public Leap.Controller 		m_controller	= new Leap.Controller();
+	Leap.Frame			m_Frame			= null;
 	
-	private static void DispatchLostEvents(Frame newFrame, Frame oldFrame)
+	private void DispatchLostEvents(Frame newFrame, Frame oldFrame)
 	{
 		foreach( Hand h in oldFrame.Hands )
 		{
@@ -96,7 +96,7 @@ public static class LeapInput
 				PointableLost(p.Id);
 		}
 	}
-	private static void DispatchFoundEvents(Frame newFrame, Frame oldFrame)
+	private void DispatchFoundEvents(Frame newFrame, Frame oldFrame)
 	{
 		foreach( Hand h in newFrame.Hands )
 		{
@@ -113,7 +113,7 @@ public static class LeapInput
 				PointableFound(p);
 		}
 	}
-	private static void DispatchUpdatedEvents(Frame newFrame, Frame oldFrame)
+	private void DispatchUpdatedEvents(Frame newFrame, Frame oldFrame)
 	{
 		foreach( Hand h in newFrame.Hands )
 		{
@@ -129,5 +129,19 @@ public static class LeapInput
 			if( oldFrame.Pointable(p.Id).IsValid && PointableUpdated != null)
 				PointableUpdated(p);
 		}
+	}
+
+	public static LeapInput leapInputSingleton = null;
+	public static LeapInput GetLeapInput() {
+		// return a singleton
+		if (leapInputSingleton == null) {
+			leapInputSingleton = new LeapInput();
+		}
+		return leapInputSingleton;
+	}
+
+	public static void Destroy()
+	{
+		leapInputSingleton = new LeapInput();
 	}
 }

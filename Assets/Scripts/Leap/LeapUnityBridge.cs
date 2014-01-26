@@ -26,7 +26,7 @@ public class LeapUnityBridge : MonoBehaviour
 	public Vector3 m_LeapScaling = new Vector3(0.02f, 0.02f, 0.02f);
 	public Vector3 m_LeapOffset = new Vector3(0,0,0);
 	
-	public bool m_UseFixedUpdate = false; //If true, calls LeapInput.Update from FixedUpdate instead of Update
+	public bool m_UseFixedUpdate = false; //If true, calls LeapInput.GetLeapInput().Update from FixedUpdate instead of Update
 	public bool m_ShowInspectorFingers = true; //If false, hides the hand game objects in the inspector.
 	public bool m_ShowJoints = false;
 	public GameObject m_InputParent; //The parent of the hand objects for motion.  Useful 
@@ -65,26 +65,27 @@ public class LeapUnityBridge : MonoBehaviour
 	void OnDestroy()
 	{
 		Debug.Log ("onDestroy");
+		LeapInput.Destroy ();
 		m_Created = false;
 	}
 	
 	void FixedUpdate()
 	{
 		if( m_UseFixedUpdate )
-			LeapInput.Update();
+			LeapInput.GetLeapInput().Update();
 	}
 	
 	void Update()
 	{
 		if( !m_UseFixedUpdate )
-			LeapInput.Update();
+			LeapInput.GetLeapInput().Update();
 		
 		if( Input.GetKeyDown(KeyCode.T) )
-			LeapInput.EnableTranslation = !LeapInput.EnableTranslation;
+			LeapInput.GetLeapInput().EnableTranslation = !LeapInput.GetLeapInput().EnableTranslation;
 		if( Input.GetKeyDown(KeyCode.R) )
-			LeapInput.EnableRotation = !LeapInput.EnableRotation;
+			LeapInput.GetLeapInput().EnableRotation = !LeapInput.GetLeapInput().EnableRotation;
 		if( Input.GetKeyDown(KeyCode.S) )
-			LeapInput.EnableScaling = !LeapInput.EnableScaling;
+			LeapInput.GetLeapInput().EnableScaling = !LeapInput.GetLeapInput().EnableScaling;
 	}
 	
 	private void CreateSceneHands()

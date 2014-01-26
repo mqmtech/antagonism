@@ -40,15 +40,15 @@ public class LeapUnitySelectionController : MonoBehaviour {
 	}
 	public virtual bool CheckShouldMove(Frame thisFrame)
 	{
-		return LeapInput.EnableTranslation && m_Touching.Count >= 1;	
+		return LeapInput.GetLeapInput().EnableTranslation && m_Touching.Count >= 1;	
 	}
 	public virtual bool CheckShouldRotate(Frame thisFrame)
 	{
-		return LeapInput.EnableRotation && m_Touching.Count >= 2;
+		return LeapInput.GetLeapInput().EnableRotation && m_Touching.Count >= 2;
 	}
 	public virtual bool CheckShouldScale(Frame thisFrame)
 	{
-		return LeapInput.EnableScaling && m_Touching.Count >= 2;
+		return LeapInput.GetLeapInput().EnableScaling && m_Touching.Count >= 2;
 	}
 	public virtual void DoMovement(Frame thisFrame)
 	{
@@ -99,7 +99,7 @@ public class LeapUnitySelectionController : MonoBehaviour {
 	
 	void Update()
 	{
-		Leap.Frame thisFrame = LeapInput.Frame;
+		Leap.Frame thisFrame = LeapInput.GetLeapInput().Frame;
 		if( thisFrame == null ) 
 			return;
 		
