@@ -144,7 +144,11 @@ public class PlayerControl : MonoBehaviour
 			AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
 			// Add a vertical force to the player.
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			//if(doubleJumping) {
+				rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			//} else {
+			//	rigidbody2D.AddForce(new Vector2(0f, jumpForce/2.0f));
+			//}
 
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;

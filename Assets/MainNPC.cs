@@ -86,8 +86,6 @@ public class MainNPC : MonoBehaviour
 
 	void applyOnEnter(Transform other)
 	{
-		return;
-
 		if(isActivated) {
 			return;
 		}
