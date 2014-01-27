@@ -16,7 +16,7 @@ public class WindParticles : MonoBehaviour
 	void Start () {
 		originalPos = transform.position;
 		deltaPos = transform.position - parentTransform.position;
-		particleSystem = transform.Find ("particles").particleSystem;
+		particleSystem = transform.GetChild (0).particleSystem;
 	}
 	
 	void Update () {
@@ -47,7 +47,7 @@ public class WindParticles : MonoBehaviour
 
 
 	void changeParticleVel (Vector3 vel) {
-			
+
 		ParticleSystem.Particle[] p = new ParticleSystem.Particle[particleSystem.particleCount+1];
 		int l = particleSystem.GetParticles(p);
 		

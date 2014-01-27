@@ -50,7 +50,7 @@ public class CameraScript : MonoBehaviour {
 		}
 
 
-		if (position.x > nextItemX && Random.value < 0.0045) {
+		if (position.x > nextItemX && Random.value < 0.005) {
 			Vector3 rightBorder = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1,0.5f,-position.z));
 			rightBorder.x += distanceBetweenItems;
 			rightBorder.y = nextPlatformY + Random.Range(-5,5);

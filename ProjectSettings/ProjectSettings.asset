@@ -10,8 +10,8 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: _2D v3
+  companyName: AntagoTeam
+  productName: Antagonism
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -74,6 +74,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   iPhoneBundleIdentifier: com.Company.ProductName
+  metroEnableIndependentInputSource: 0
+  metroEnableLowLatencyPresentationAPI: 0
   productGUID: 3a8984573b6d44decadf1ac29eacc6ec
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -110,7 +112,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: d234b52507a8f6b45871198379ad6d83, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
@@ -151,9 +153,9 @@ PlayerSettings:
   flashStrippingLevel: 2
   spritePackerPolicy: DefaultPackerPolicy
   scriptingDefineSymbols: {}
-  metroPackageName: _2D v3
+  metroPackageName: 2Dv3
   metroPackageLogo: 
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -163,7 +165,7 @@ PlayerSettings:
   metroTileLogo: 
   metroTileWideLogo: 
   metroTileSmallLogo: 
-  metroTileShortName: 
+  metroTileShortName: _2D v3
   metroCommandLineArgsFile: 
   metroTileShowName: 1
   metroTileForegroundText: 1
@@ -171,7 +173,21 @@ PlayerSettings:
   metroSplashScreenImage: 
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  metroCapabilities: {}
+  metroCapabilities:
+    EnterpriseAuthentication: 0
+    InternetClient: 0
+    InternetClientServer: 0
+    Location: 0
+    Microphone: 0
+    MusicLibrary: 0
+    PicturesLibrary: 0
+    PrivateNetworkClientServer: 0
+    Proximity: 0
+    RemovableStorage: 0
+    SharedUserCertificates: 0
+    VideosLibrary: 0
+    WebCam: 0
+  metroUnprocessedPlugins: []
   metroCompilationOverrides: 1
   blackberryDeviceAddress: 
   blackberryDevicePassword: 

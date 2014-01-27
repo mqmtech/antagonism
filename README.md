@@ -1,12 +1,14 @@
-<<<<<<< HEAD
+Antagonism (cats version)
+=========================
 
-![Leap Selection Screenshot](http://i.imgur.com/PiMNElh.gif)
+This is a motion controlled platform game with a contra-operative gameplay. The first player has to advance through the game while the second player (or the cat) can use the motion control to move the platforms and items on the level and make it more difficult/easier for the first player to succeed.
 
-![Leap Selection Screenshot](http://i.imgur.com/KUUtiGE.gif)
+You will need the Leap Motion hardware in order to play it.
 
-![Leap Selection Screenshot](http://media.tumblr.com/af766fd7d65d0b994534ee909a942949/tumblr_inline_mmt7m96li91qz4rgp.png)
+Unity3D Pro is required to compile the sources.
 
-=======
-antagonism
-==========
->>>>>>> d3de4751bef33395fb9308f8432aa4355cb90220
+This game took part in the Global Game Jam 2014: http://globalgamejam.org/2014/games/antagonism-cats-version
+
+Youtube demo and explanation (in Spanish): 
+http://www.youtube.com/watch?v=k8YLKFi5xp8
+

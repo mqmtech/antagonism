@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Antagonism\Scripts\RestartOnOutOfScreen.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\destroyFarElements.cs">
     <Files>
-      <File FileName="Assets\TitleController.cs" Line="8" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="78" Column="20" />
-      <File FileName="Assets\CameraScript.cs" Line="67" Column="1" />
-      <File FileName="Assets\Antagonism\Scripts\RestartOnOutOfScreen.cs" Line="25" Column="81" />
+      <File FileName="Assets\destroyFarElements.cs" Line="8" Column="27" />
+      <File FileName="Assets\CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Antagonism\Scripts\RestartOnOutOfScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\WindParticles.cs" Line="1" Column="1" />
+      <File FileName="Assets\Action.cs" Line="1" Column="1" />
+      <File FileName="Assets\destroyFarElements.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

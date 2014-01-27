@@ -76,10 +76,10 @@ GameObject:
   - 61: {fileID: 6100000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400008}
-  - 114: {fileID: 11400006}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -257,9 +257,9 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c30c9feed463a4fae14a597ef56616, type: 3}
+  m_Script: {fileID: 11500000, guid: b39049573f74b9646bd8979931d36e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400008
